@@ -1,0 +1,15 @@
+.card{
+    border-radius: 30px;
+    background-color: var(--clr-white);
+    width: 100%;
+    padding: 18px;
+    gap: 12px;
+    margin-top: 24px;
+    }
+.card:first-child{
+    margin-top: 0;
+}
+.text{
+    color: var(--clr-black);
+    font-size: 1.8rem;
+}

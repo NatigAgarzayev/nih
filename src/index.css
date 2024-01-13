@@ -1,0 +1,61 @@
+@import "./assets/fonts/fonts.css";
+:root {
+  --clr-primary: #4075FF;
+  --clr-secondary: #EBF0FF;
+  --clr-black-light: #323232;
+  --clr-black: #000;
+  --clr-white: #fff;
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 400;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a{
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;               /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 40px;
+  background: var(--clr-secondary);        /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--clr-primary);    /* color of the scroll thumb */
+  border: 3px solid var(--clr-primary);  /* creates padding around scroll thumb */
+  border-radius: 40px;
+
+}
