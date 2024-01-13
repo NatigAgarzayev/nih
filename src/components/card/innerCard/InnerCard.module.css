@@ -1,13 +1,13 @@
 .card{
     border-radius: 30px;
-    background-color: var(--clr-white);
+    background-color: var(--clr-white); 
     width: 100%;
     padding: 18px;
     gap: 12px;
     margin-top: 24px;
-    }
+}
 .card:first-child{
-    margin-top: 0;
+    margin-top: 24px;
 }
 .text{
     color: var(--clr-black);
