@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Layout from './components/layout/Layout.jsx';
 import Kanban from './pages/main/Kanban.jsx';
+import Parser from './pages/parser/Parser.jsx';
 
 
 const router = createBrowserRouter([
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Kanban />
+      },
+      {
+        path: "/parser",
+        element: <Parser />
       }
     ]
   },

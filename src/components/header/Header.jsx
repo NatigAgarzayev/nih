@@ -7,7 +7,9 @@ export default function Header() {
     return (
         <div className={`${classes.header} flex`}>
             <div className={`${classes.nav} flex`}>
-                <div className={classes.logo}>NIH</div>
+                <Link to="/">
+                    <div className={classes.logo}>NIH</div>
+                </Link>
                 <nav>
                     <ul className={`${classes.list} flex`}>
                         <li>

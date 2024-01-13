@@ -1,0 +1,10 @@
+.content{
+    padding: 18px;
+    background-color: var(--clr-white);
+    border-radius: 30px;
+    border: 1px solid var(--clr-black-light);
+    color: var(--clr-black-light);
+    font-size: 1.8rem;
+    font-weight: 500;
+    height: 58px;
+}

@@ -1,0 +1,16 @@
+.sortLabel{
+    display: flex;
+    justify-content: start;
+    
+}
+
+.sortBack{
+
+}
+
+.sortFront{
+    gap: 8px;
+    color: var(--clr-black);
+    font-size: 1.8rem;
+    font-weight: 500;
+}

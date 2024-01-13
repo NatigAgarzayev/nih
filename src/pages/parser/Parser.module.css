@@ -1,0 +1,14 @@
+.parsingNumber{
+    padding: 32px 0;
+    color: var(--clr-black-light);
+    font-size: 3.6rem;
+    font-weight: 500;
+}
+
+.toolsPanel{
+    justify-content: space-between;
+}
+
+.toolsKit{
+    gap: 24px;
+}

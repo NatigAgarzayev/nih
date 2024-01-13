@@ -1,0 +1,6 @@
+.returnPage{
+    gap: 8px;
+    color: var(--clr-black-light);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
