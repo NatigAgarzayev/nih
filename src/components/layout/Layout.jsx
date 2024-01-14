@@ -4,8 +4,10 @@ import classes from "./Layout.module.css"
 export default function Layout() {
     return (
         <div className={classes.container}>
-            <Header />
-            <Outlet />
+            <div className={classes.flexing}>
+                <Header />
+                <Outlet />
+            </div>
         </div>
     )
 }
