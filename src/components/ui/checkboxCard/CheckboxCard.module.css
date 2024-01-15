@@ -1,0 +1,32 @@
+.checkbox{
+    width: 100%;
+    background-color: var(--clr-white);
+    border-radius: 30px;
+    padding: 18px;
+    height: 58px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.checkboxPricipal{
+    position: relative;
+}
+
+.checkboxLabel{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.channelName{
+    color: var(--clr-black);
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.cahecboxFirstPart{
+    gap: 12px;
+}

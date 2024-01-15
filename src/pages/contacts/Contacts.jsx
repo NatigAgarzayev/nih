@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import classes from "./Parser.module.css"
+import classes from "./Contacts.module.css"
 import ReturnPage from '../../components/ui/returnPage/ReturnPage'
 import SearchInput from '../../components/ui/searchInput/SearchInput'
 import LinkButton from '../../components/ui/linkButton/LinkButton'
@@ -8,13 +8,12 @@ import parserData from "../../components/utils/parser"
 import Button from '../../components/ui/button/Button'
 import SquareLink from '../../components/ui/squareLink/SquareLink'
 
-export default function Parser() {
+export default function Mailing() {
 
     const options = [
         { value: "by_name", label: "Сортировать по имени" },
         { value: "by_source", label: "Сортировать по источнику" },
         { value: "by_date", label: "Сортировать по дате" },
-        { value: "by_status", label: "Сортировать по статусу" },
     ]
 
     const [search, setSearch] = useState("")
@@ -22,7 +21,6 @@ export default function Parser() {
 
     return (
         <div className={classes.flexing}>
-            <h2 className={classes.parsingNumber}>Результаты парсинга №213124</h2>
             <div className={`${classes.toolsPanel} flex`}>
                 <div className={`${classes.toolsKit} flex`}>
                     <ReturnPage />
@@ -30,7 +28,6 @@ export default function Parser() {
                         value={search}
                         setData={setSearch}
                     />
-                    <LinkButton link={"/parser-launcher"} content={"Добавить"} />
                 </div>
                 <div>
                     <Select options={options} setValue={setOption} />
@@ -44,11 +41,11 @@ export default function Parser() {
                                 <div>
                                     <SquareLink link={"/"} />
                                 </div>
+                                <div>Имя Фамилия {item.id}</div>
                                 <div>Источник {item.id}</div>
                                 <div>Дата {item.id}</div>
-                                <div>Статус {item.id}</div>
                                 <div>
-                                    <Button link={"/info-parser"} content={"Инфо"} />
+                                    <Button link={"/"} content={"Инфо"} />
                                 </div>
                             </li>
                         ))

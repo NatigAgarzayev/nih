@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import classes from "./Parser.module.css"
+import classes from "./Mailing.module.css"
 import ReturnPage from '../../components/ui/returnPage/ReturnPage'
 import SearchInput from '../../components/ui/searchInput/SearchInput'
 import LinkButton from '../../components/ui/linkButton/LinkButton'
@@ -8,12 +8,11 @@ import parserData from "../../components/utils/parser"
 import Button from '../../components/ui/button/Button'
 import SquareLink from '../../components/ui/squareLink/SquareLink'
 
-export default function Parser() {
+export default function Mailing() {
 
     const options = [
-        { value: "by_name", label: "Сортировать по имени" },
         { value: "by_source", label: "Сортировать по источнику" },
-        { value: "by_date", label: "Сортировать по дате" },
+        { value: "by_theme", label: "Сортировать по тематике" },
         { value: "by_status", label: "Сортировать по статусу" },
     ]
 
@@ -22,7 +21,6 @@ export default function Parser() {
 
     return (
         <div className={classes.flexing}>
-            <h2 className={classes.parsingNumber}>Результаты парсинга №213124</h2>
             <div className={`${classes.toolsPanel} flex`}>
                 <div className={`${classes.toolsKit} flex`}>
                     <ReturnPage />
@@ -45,10 +43,10 @@ export default function Parser() {
                                     <SquareLink link={"/"} />
                                 </div>
                                 <div>Источник {item.id}</div>
-                                <div>Дата {item.id}</div>
+                                <div>Тематика {item.id}</div>
                                 <div>Статус {item.id}</div>
                                 <div>
-                                    <Button link={"/info-parser"} content={"Инфо"} />
+                                    <Button link={"/"} content={"Инфо"} />
                                 </div>
                             </li>
                         ))

@@ -51,7 +51,7 @@ a{
 
 ::-webkit-scrollbar-track {
   border-radius: 40px;
-  background: var(--clr-secondary);        /* color of the tracking area */
+  background: var(--clr-input);        /* color of the tracking area */
 }
 
 ::-webkit-scrollbar-thumb {
