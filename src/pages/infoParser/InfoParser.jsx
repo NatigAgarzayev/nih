@@ -5,7 +5,7 @@ import CheckboxCard from "../../components/ui/checkboxCard/CheckboxCard"
 import Button from "../../components/ui/button/Button"
 import { useState } from "react"
 
-export default function Parser() {
+export default function InfoParser() {
 
     const [selected, setSelected] = useState([])
 
@@ -39,7 +39,7 @@ export default function Parser() {
                 </div>
                 <div className={`${classes.parserAgree} flex`}>
                     <p>Мы проанализировали, мы можем получить {selected?.length} из {parserInfoData?.length} участников</p>
-                    <Button className={classes.buttonStyle} link={"/"} content={"OK"} />
+                    <Button className={classes.buttonStyle} link={"/parser"} content={"OK"} />
                 </div>
             </div>
         </div>

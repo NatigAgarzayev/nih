@@ -30,7 +30,7 @@ export default function Parser() {
                         value={search}
                         setData={setSearch}
                     />
-                    <LinkButton link={"/parser-launcher"} content={"Добавить"} />
+                    <LinkButton link={"/parsing-launcher"} content={"Добавить"} />
                 </div>
                 <div>
                     <Select options={options} setValue={setOption} />

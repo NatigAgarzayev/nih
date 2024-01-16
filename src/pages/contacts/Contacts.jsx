@@ -2,13 +2,12 @@ import React, { useState } from 'react'
 import classes from "./Contacts.module.css"
 import ReturnPage from '../../components/ui/returnPage/ReturnPage'
 import SearchInput from '../../components/ui/searchInput/SearchInput'
-import LinkButton from '../../components/ui/linkButton/LinkButton'
 import Select from '../../components/ui/select/Select'
 import parserData from "../../components/utils/parser"
 import Button from '../../components/ui/button/Button'
 import SquareLink from '../../components/ui/squareLink/SquareLink'
 
-export default function Mailing() {
+export default function Contacts() {
 
     const options = [
         { value: "by_name", label: "Сортировать по имени" },

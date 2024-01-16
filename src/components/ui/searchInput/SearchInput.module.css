@@ -4,6 +4,7 @@
     border-radius: 30px;
     gap: 12px;
     height: 58px;
+    width: 100%;
 }
 
 .searchInput{

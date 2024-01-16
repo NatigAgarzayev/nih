@@ -16,7 +16,6 @@
     height: 1.4rem;
     transform: scale(0);
     background: url("../../../assets/images/check.svg") no-repeat center;
-    z-index: 10;
 }
 
 .checkbox[type="checkbox"]:checked{

@@ -32,6 +32,10 @@ h1, h2, h3, h4, h5, h6, p, ol, ul {
   font-weight: normal;
 }
 
+input, textarea{
+  font-family: "SF Pro Display", sans-serif;
+}
+
 ol, ul {
   list-style: none;
 }

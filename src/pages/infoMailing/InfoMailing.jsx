@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
-import classes from "./Mailing.module.css"
+import classes from "./InfoMailing.module.css"
 import ReturnPage from '../../components/ui/returnPage/ReturnPage'
 import SearchInput from '../../components/ui/searchInput/SearchInput'
 import LinkButton from '../../components/ui/linkButton/LinkButton'
 import Select from '../../components/ui/select/Select'
-import parserData from "../../components/utils/parser"
+import InfoMailingData from "../../components/utils/parser"
 import Button from '../../components/ui/button/Button'
 import SquareLink from '../../components/ui/squareLink/SquareLink'
 
-export default function Mailing() {
+export default function InfoMailing() {
 
     const options = [
-        { value: "by_source", label: "Сортировать по источнику" },
-        { value: "by_theme", label: "Сортировать по тематике" },
+        { value: "by_name", label: "Сортировать по имени" },
         { value: "by_status", label: "Сортировать по статусу" },
+        { value: "by_date", label: "Сортировать по дате" },
     ]
 
     const [search, setSearch] = useState("")
@@ -28,7 +28,7 @@ export default function Mailing() {
                         value={search}
                         setData={setSearch}
                     />
-                    <LinkButton link={"/mailing-launcher"} content={"Добавить"} />
+                    <LinkButton link={"/parser-launcher"} content={"Добавить"} />
                 </div>
                 <div>
                     <Select options={options} setValue={setOption} />
@@ -37,16 +37,16 @@ export default function Mailing() {
             <div className={classes.parser}>
                 <ul className={classes.parserContent}>
                     {
-                        parserData.map(item => (
+                        InfoMailingData.map(item => (
                             <li className={`${classes.parserItem} flex`} key={item.id}>
                                 <div>
                                     <SquareLink link={"/"} />
                                 </div>
-                                <div>Источник {item.id}</div>
-                                <div>Тематика {item.id}</div>
+                                <div>Имя Фамилия {item.id}</div>
                                 <div>Статус {item.id}</div>
+                                <div>Дата {item.id}</div>
                                 <div>
-                                    <Button link={"/info-mailing"} content={"Инфо"} />
+                                    <Button link={"/info-mailing"} content={"Написать"} />
                                 </div>
                             </li>
                         ))
