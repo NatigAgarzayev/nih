@@ -12,6 +12,7 @@ import Contacts from './pages/contacts/Contacts.jsx'
 import InfoParser from './pages/infoParser/InfoParser.jsx'
 import InfoMailing from './pages/infoMailing/InfoMailing.jsx';
 import ParsingLauncher from './pages/parsingLauncher/ParsingLauncher.jsx';
+import Profile from './pages/profile/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/parsing-launcher",
         element: <ParsingLauncher />
+      },
+      {
+        path: "/profile",
+        element: <Profile />
       }
     ]
   },
