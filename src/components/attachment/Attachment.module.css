@@ -1,0 +1,16 @@
+.label{
+    border-radius: 50%;
+    background-color: var(--clr-primary);
+    padding: 18px;
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.input{
+    display: none;
+}

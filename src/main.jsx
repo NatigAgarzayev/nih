@@ -13,6 +13,7 @@ import InfoParser from './pages/infoParser/InfoParser.jsx'
 import InfoMailing from './pages/infoMailing/InfoMailing.jsx';
 import ParsingLauncher from './pages/parsingLauncher/ParsingLauncher.jsx';
 import Profile from './pages/profile/Profile.jsx';
+import Messenger from './pages/messenger/Messenger.jsx';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />
+      },
+      {
+        path: "/messenger",
+        element: <Messenger />
       }
     ]
   },
