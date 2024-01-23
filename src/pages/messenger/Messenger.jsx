@@ -1,14 +1,24 @@
-import React, { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ReturnPage from '../../components/ui/returnPage/ReturnPage'
 import classes from "./Messenger.module.css"
 import userProfileImg from "../../assets/images/profile.jpg"
 import Input from '../../components/ui/input/Input'
 import Attachment from '../../components/attachment/Attachment'
 import SendButton from '../../components/ui/sendButton/SendButton'
-import messageData from "../../components/utils/parser"
+import messages from "../../components/utils/messages"
+import Message from '../../components/ui/message/Message'
 export default function Messenger() {
 
     const [inputValue, setInputValue] = useState("")
+    const messagesEndRef = useRef(null)
+
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+    }
+
+    useEffect(() => {
+        scrollToBottom()
+    }, [messages])
 
     return (
         <div>
@@ -30,11 +40,17 @@ export default function Messenger() {
                 <div className={classes.userChat}>
                     <div className={classes.chatContent}>
                         {
-                            messageData?.map(item => (
-                                <div style={{ display: "flex", justifyContent: item.id % 2 === 1 ? "flex-end" : 'flex-start' }} key={item.id}>
-                                    Salam
-                                </div>
-                            ))
+                            <>
+                                {
+                                    messages?.map(item => (
+                                        item.user === "client" ?
+                                            <Message key={item.id} position={0} message={item.message} profileImage={""} time={item.time} />
+                                            :
+                                            <Message key={item.id} position={1} message={item.message} profileImage={""} time={item.time} />
+                                    ))
+                                }
+                                <div ref={messagesEndRef} />
+                            </>
                         }
                     </div>
                     <div className={classes.chatToolbar}>

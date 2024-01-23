@@ -46,7 +46,7 @@
 
 .userChat{
     flex: auto;
-    background-color: var(--clr-secondary);
+    background: url("../../assets/images/messenger_back.jpeg") no-repeat center / cover;
     border-radius: 20px;
     padding: 32px 16px 32px 32px;
     display: flex;
@@ -61,8 +61,13 @@
 }
 
 .chatContent > div{
-    font-size: 12rem;
+    margin-top: 55px;
 }
+
+.chatContent > div:first-child{
+    margin-top: 0px;
+}
+
 
 .chatToolbar{
     margin-top: auto;
