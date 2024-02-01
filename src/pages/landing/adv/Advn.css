@@ -1,0 +1,143 @@
+.advn {
+}
+.advn__body {
+    padding: 140px 64px;
+    background: var(--clr-secondary);
+    border-radius: 30px;
+    position: relative;
+}
+/* .left__image {
+}
+.left__img-1 {
+}
+.left__img-2 {
+}
+.right__image {
+}
+.right__img-1 {
+}
+.right__img-2 {
+} */
+.advn__title {
+    color: var(--clr-black-light);
+    font-size: 7rem;
+    font-weight: 300;
+    line-height: 84px;
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+}
+.advn__flex {
+    margin-top: 50px;
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+}
+.advn__flex-item {
+    flex: 0 1 50%;
+    padding: 28px;
+    border-radius: 30px;
+    background: var(--clr-white);
+}
+
+.advn__flex-item > h4 {
+    color: var(--clr-black-light);
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 29px;
+}
+
+.advn__flex-item > p {
+    color: var(--clr-black-light);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 15px;
+}
+
+.advn__div-3 {
+    margin-top: 32px;
+}
+
+.advn__info {
+    margin-top: 32px;
+    padding: 32px;
+    border-radius: 30px;
+    font-size: 2.8rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+}
+
+.advn__info > div {
+    width: 24px;
+    height: 24px;
+}
+.advn__info img {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+@media (max-width: 768px) {
+    .advn__body {
+        padding: 18px;
+    }
+    .advn__flex {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .advn__title {
+        font-size: 4.8rem;
+        line-height: 38px;
+    }
+    .advn__info {
+        padding: 18px;
+        margin-top: 18px;
+    }
+    .advn__flex-item {
+        padding: 18px;
+    }
+    .advn__div-3 {
+        margin-top: 18px;
+    }
+}
+
+@media (max-width: 580px) {
+    .advn__flex-item > h4 {
+        font-size: 1.8rem;
+        line-height: 21px;
+    }
+
+    .advn__flex-item > p {
+        font-size: 1.4rem;
+        line-height: 17px;
+    }
+    .advn__info > p {
+        font-size: 1.4rem;
+        line-height: 17px;
+    }
+    .advn__title {
+        font-size: 3.2rem;
+        line-height: 38px;
+    }
+    .advn__flex {
+        margin-top: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .adv__image {
+        display: none;
+    }
+    .advn__info {
+        flex-direction: column;
+        align-items: start;
+    }
+}

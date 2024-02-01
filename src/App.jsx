@@ -17,6 +17,7 @@ import { useEffect, useState } from 'react';
 import IfMobile from './pages/ifMobile/IfMobile.jsx';
 import { QueryClientProvider, QueryClient, } from '@tanstack/react-query';
 import MailingLauncher from './pages/mailingLauncher/MailingLauncher.jsx';
+import Landing from './pages/landing/Landing.jsx';
 
 
 const router = createBrowserRouter([
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: "/landing",
+    element: <Landing />
+  }
 ]);
 
 function App() {
@@ -82,13 +87,12 @@ function App() {
 
   const queryClient = new QueryClient()
   return (
-    // isDesktop ?
+    isDesktop ?
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
     </QueryClientProvider>
-    // :
-
-    // <IfMobile />
+    :
+    <IfMobile />
   )
 }
 

@@ -5,7 +5,7 @@ export default function MailingCards({ active, id }) {
     return (
         <div className={classes.cardBox}>
             <div className={`${classes.parserId} ${active && classes.activeCard}`}>Парсер {id}</div>
-            <div className={classes.channel}>
+                <div className={classes.channel}>
                 <Logo w={32} h={32} src={""} />
                 <p>Ноготочки ЕКБ</p>
             </div>
