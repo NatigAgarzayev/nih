@@ -2,6 +2,7 @@ import './App.css'
 import {
   createBrowserRouter,
   RouterProvider,
+  useLocation,
 } from "react-router-dom";
 import Layout from './components/layout/Layout.jsx';
 import Kanban from './pages/main/Kanban.jsx';
@@ -78,6 +79,7 @@ function App() {
 
   const [isDesktop, setIsDesktop] = useState(true)
 
+  const currentRoute = window.location.href.split("/")[3]
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
     const isMobile = /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
@@ -87,7 +89,7 @@ function App() {
 
   const queryClient = new QueryClient()
   return (
-    isDesktop ?
+    (isDesktop || currentRoute) ?
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
     </QueryClientProvider>
