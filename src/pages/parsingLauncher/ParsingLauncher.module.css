@@ -1,55 +1,54 @@
-.parsingNumber{
+.parsingNumber {
     padding: 32px 0;
     color: var(--clr-black-light);
     font-size: 3.6rem;
     font-weight: 500;
 }
 
-.flexing{
+.flexing {
 }
 
-.toolsPanel{
+.toolsPanel {
     margin-top: 32px;
     justify-content: space-between;
 }
 
-.toolsKit{
+.toolsKit {
     gap: 24px;
     height: 24px;
 }
 
-.toolBox{
+.toolBox {
     justify-content: space-between;
     gap: 44px;
 }
 
-.toolBox > div{
+.toolBox > div {
 }
 
-.toolBox > div:first-child{
+.toolBox > div:first-child {
     flex: 0 1 455px;
 }
-.toolBox > div:last-child{
+.toolBox > div:last-child {
     cursor: pointer;
     flex: 1 0 333px;
 }
 
-.parserTitle{
+.parserTitle {
     color: var(--clr-black);
     font-size: 3.6rem;
     font-weight: 500;
     padding-bottom: 24px;
 }
 
-.parser{
+.parser {
     display: flex;
     border-radius: 20px;
     margin-top: 32px;
     gap: 32px;
-    
 }
 
-.parserContent{
+.parserContent {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -59,27 +58,27 @@
     padding-right: 12px;
     margin-top: 24px;
     height: calc(100vh - 395px - 32px - 16px);
-
 }
 
-.autoParsing{
+.autoParsing {
     border-radius: 20px;
     padding: 24px 24px 24px 24px;
     flex: 0 1 50%;
     background-color: var(--clr-secondary);
 }
 
-.sort{
+.sort {
     gap: 12px;
+    position: relative;
 }
 
-.sort p{
+.sort p {
     color: var(--clr-black);
     font-size: 1.8rem;
     font-weight: 500;
 }
 
-.manualParsing{
+.manualParsing {
     border-radius: 20px;
     padding: 24px;
     flex: 0 1 50%;
@@ -88,7 +87,11 @@
     flex-direction: column;
 }
 
-.buttonLaunch{
+.groupTextarea {
+    margin-top: 20px;
+}
+
+.buttonLaunch {
     margin-top: auto;
     margin-left: auto;
     width: 272px;

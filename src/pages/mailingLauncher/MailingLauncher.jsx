@@ -99,7 +99,10 @@ export default function MailingLauncher() {
                                                 </div>
                                             </div>
                                             <div>
-                                                <Textarea row={2} />
+                                                <Textarea row={3} />
+                                            </div>
+                                            <div>
+                                                <Textarea row={1} placeholder={"Введите еще один текст"} />
                                             </div>
                                             <div>
                                                 <ReactButton content={"Сохранить"} />

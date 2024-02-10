@@ -7,47 +7,24 @@ import Select from '../../components/ui/select/Select'
 import parserData from "../../components/utils/parser"
 import Button from '../../components/ui/button/Button'
 import SquareLink from '../../components/ui/squareLink/SquareLink'
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
+import { useGetParticipantById } from '../../api/parser/queries'
 
 export default function Mailing() {
 
     const [search, setSearch] = useState("")
     const [option, setOption] = useState("") // chosen option from Select
     
+    const {data: groupId, refetch: refetchGroup, isLoading} = useGetParticipantById(64)
 
-
-    const {mutate: mutateGroupParsing, isPending} = useMutation({
-        mutationFn: () => {
-            axios.post("http://84.201.179.250:3000/parser/participants/group/fufelflexchat")
-        },
-        onMutate: () => {
-            console.log("Mutating...")
-        },
-        onSuccess: (data) => {
-            console.log(data)
-        }
-    }) 
-    
-    const handleMutation = async () => {
-        mutateGroupParsing()
-        /* console.log("Started..")
-        await axios.post("http://84.201.179.250:3000/parser/participants/channel/magistratura_az", {
-            depth: 1,
-        })
-        .then(res => res.data)
-        .then(res => console.log(res))
-        .catch(err => console.log("Error: ", err)) */
+    const handleMutation = () => {
+        // mutateGroupParsing()
+        refetchGroup()
+        console.log(groupId)
     }
 
-   /*  useQuery({
-        queryKey: ['groups'],
-        queryFn: () => {
-            axios.post("http://84.201.179.250:3000/parser/participants/group/fufelflexchat").then(res => res.data)
-        }
-    }) */
-
-    if(isPending) return <div>Pending...</div>
+    if( isLoading) return <div>Pending...</div>
 
     const options = [
         { value: "by_source", label: "Сортировать по источнику" },

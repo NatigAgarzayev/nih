@@ -1,61 +1,60 @@
-.parsingNumber{
+.parsingNumber {
     padding: 32px 0;
     color: var(--clr-black-light);
     font-size: 3.6rem;
     font-weight: 500;
 }
 
-.flexing{
+.flexing {
 }
 
-.toolsPanel{
+.toolsPanel {
     margin-top: 32px;
     justify-content: space-between;
     height: 58px;
     margin-bottom: 32px;
 }
 
-.toolsKit{
+.toolsKit {
     gap: 24px;
     height: 24px;
 }
 
-.toolsKit:nth-child(2){
+.toolsKit:nth-child(2) {
     margin-left: 100px !important;
 }
 
-.toolBox{
+.toolBox {
     justify-content: space-between;
     gap: 44px;
 }
 
-.toolBox > div{
+.toolBox > div {
 }
 
-.toolBox > div:first-child{
+.toolBox > div:first-child {
     flex: 0 1 455px;
 }
-.toolBox > div:last-child{
+.toolBox > div:last-child {
     cursor: pointer;
     flex: 1 0 333px;
 }
 
-.parserTitle{
+.parserTitle {
     color: var(--clr-black);
     font-size: 3.6rem;
     font-weight: 500;
     padding-bottom: 24px;
 }
 
-.parser{
+.parser {
     display: flex;
     border-radius: 20px;
     margin-top: 32px;
     gap: 32px;
-    
 }
 
-.parserContent{
+.parserContent {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -64,27 +63,26 @@
     overflow-x: auto;
     padding-right: 12px;
     height: calc(100vh - 395px - 32px - 16px + 24px);
-
 }
 
-.autoParsing{
+.autoParsing {
     border-radius: 20px;
     padding: 24px 24px 24px 24px;
     flex: 0 1 50%;
     background-color: var(--clr-secondary);
 }
 
-.sort{
+.sort {
     gap: 12px;
 }
 
-.sort p{
+.sort p {
     color: var(--clr-black);
     font-size: 1.8rem;
     font-weight: 500;
 }
 
-.manualParsing{
+.manualParsing {
     border-radius: 20px;
     padding: 24px;
     flex: 0 1 50%;
@@ -93,19 +91,19 @@
     flex-direction: column;
 }
 
-.buttonLaunch{
+.buttonLaunch {
     margin-top: auto;
     margin-left: auto;
     width: 272px;
 }
 
-.exampleMessage{
+.exampleMessage {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.chatToolbar{
+.chatToolbar {
     margin-top: auto;
     display: flex;
     align-items: center;
@@ -113,11 +111,11 @@
     padding-top: 24px;
 }
 
-.chatToolbar > div:nth-child(2){
+.chatToolbar > div:nth-child(2) {
     flex: auto;
 }
 
-.multipleSend{
+.multipleSend {
     display: flex;
     align-items: center;
     gap: 18px;
@@ -127,20 +125,19 @@
     position: relative;
 }
 
-.script{
+.script {
     cursor: pointer;
 }
 
-.bot{
+.bot {
     cursor: pointer;
 }
 
-.send{
+.send {
     cursor: pointer;
 }
 
-
-.preferences{
+.preferences {
     max-width: 250px;
     position: absolute;
     left: -80px;
@@ -155,10 +152,10 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     padding: 9px 0;
-    z-index: 2;
+    z-index: 12;
 }
 
-.preferences > li{
+.preferences > li {
     padding: 6px 18px;
     cursor: pointer;
     color: var(--clr-primary);
@@ -169,7 +166,7 @@
     transition: background 0.1s ease;
 }
 
-.texting{
+.texting {
     width: 297px;
     position: absolute;
     left: 20px;
@@ -185,12 +182,12 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     padding: 18px;
-    z-index: 2;
+    z-index: 12;
 }
-.checkboxLabel{
+.checkboxLabel {
     position: relative;
 }
-.checkboxLabel > label{
+.checkboxLabel > label {
     position: absolute;
     left: 0;
     top: 0;
@@ -199,13 +196,12 @@
     cursor: pointer;
 }
 
-.checkboxLabel > div{
+.checkboxLabel > div {
     justify-content: space-between;
-
 }
 
-.checkboxLabel > div > p{
- color: var(--clr-black-light);
- font-size: 1.8rem;
- font-weight: 500;
+.checkboxLabel > div > p {
+    color: var(--clr-black-light);
+    font-size: 1.8rem;
+    font-weight: 500;
 }
