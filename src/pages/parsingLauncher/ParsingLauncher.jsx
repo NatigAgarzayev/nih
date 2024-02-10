@@ -2,27 +2,22 @@ import React, { useState } from 'react'
 import classes from "./ParsingLauncher.module.css"
 import ReturnPage from '../../components/ui/returnPage/ReturnPage'
 import SearchInput from '../../components/ui/searchInput/SearchInput'
-import Select from '../../components/ui/select/Select'
 import parsingLauncherData from "../../components/utils/parser"
-import Button from '../../components/ui/button/Button'
 import CheckboxCard from '../../components/ui/checkboxCard/CheckboxCard'
 import sort from "../../assets/images/sort.svg"
 import Textarea from '../../components/ui/textarea/Textarea'
 import ReactButton from '../../components/ui/reactButton/ReactButton'
 import { usePostGroups } from '../../api/parser/queries'
-import Cookies from 'js-cookie'
-import FilterParser from '../../components/filterParser/filterParser'
-import { useMutation } from '@tanstack/react-query'
-import axios from 'axios'
+// import Cookies from 'js-cookie'
+import FilterParser from '../../components/filterParser/FilterParser.jsx'
 
 export default function ParsingLauncher() {
 
-    const options = [
+   /*  const options = [
         { value: "by_subs", label: "Сортировать по кол-ву подписчиков" },
-    ]
+    ] */
 
     const [search, setSearch] = useState("")
-    const [option, setOption] = useState("") // chosen option from Select
     const [textareaChannels, setTextareaChannels] = useState("")
     const [textareaGroups, setTextareaGroups] = useState("")
     const {mutate: mutateGroups, isPending: groupPending,} = usePostGroups()
