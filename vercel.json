@@ -1,8 +1,5 @@
 {
-  "rewrites": [
-    {
-      "source": "/(api|v1)/:path*",
-      "destination": "https://nih-project.vercel.app/:path*"
-    }
-  ]
+  "rewrites":  [
+      {"source": "/(.*)", "destination": "/"}
+   ]
 }
