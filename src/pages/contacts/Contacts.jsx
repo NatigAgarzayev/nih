@@ -3,9 +3,9 @@ import classes from "./Contacts.module.css"
 import ReturnPage from '../../components/ui/returnPage/ReturnPage'
 import SearchInput from '../../components/ui/searchInput/SearchInput'
 import Select from '../../components/ui/select/Select'
-import parserData from "../../components/utils/parser"
 import Button from '../../components/ui/button/Button'
 import SquareLink from '../../components/ui/squareLink/SquareLink'
+import { useGetContacts } from '../../api/contact/queries'
 
 export default function Contacts() {
 
@@ -17,6 +17,8 @@ export default function Contacts() {
 
     const [search, setSearch] = useState("")
     const [option, setOption] = useState("") // chosen option from Select
+
+    const {data: contactsData, isLoading: contactsLoading} = useGetContacts()
 
     return (
         <div className={classes.flexing}>
@@ -35,14 +37,14 @@ export default function Contacts() {
             <div className={classes.parser}>
                 <ul className={classes.parserContent}>
                     {
-                        parserData.map(item => (
-                            <li className={`${classes.parserItem} flex`} key={item.id}>
+                        !contactsLoading && contactsData?.map((item, index) => (
+                            <li key={index} className={`${classes.parserItem} flex`}>
                                 <div>
                                     <SquareLink link={"/"} />
                                 </div>
-                                <div>Имя Фамилия {item.id}</div>
-                                <div>Источник {item.id}</div>
-                                <div>Дата {item.id}</div>
+                                <div>{item.full_name}</div>
+                                <div>{item.source}</div>
+                                <div>{item.date}</div>
                                 <div>
                                     <Button link={"/"} content={"Инфо"} />
                                 </div>

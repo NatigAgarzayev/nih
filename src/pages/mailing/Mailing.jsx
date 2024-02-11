@@ -4,12 +4,12 @@ import ReturnPage from '../../components/ui/returnPage/ReturnPage'
 import SearchInput from '../../components/ui/searchInput/SearchInput'
 import LinkButton from '../../components/ui/linkButton/LinkButton'
 import Select from '../../components/ui/select/Select'
-import parserData from "../../components/utils/parser"
 import Button from '../../components/ui/button/Button'
 import SquareLink from '../../components/ui/squareLink/SquareLink'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import { useGetParticipantById } from '../../api/parser/queries'
+import { useGetMailingAll } from '../../api/mailing/queries'
 
 export default function Mailing() {
 
@@ -17,6 +17,7 @@ export default function Mailing() {
     const [option, setOption] = useState("") // chosen option from Select
     
     const {data: groupId, refetch: refetchGroup, isLoading} = useGetParticipantById(64)
+    const {data: mailingData, isLoading: mailingLoading} = useGetMailingAll()
 
     const handleMutation = () => {
         // mutateGroupParsing()
@@ -24,8 +25,7 @@ export default function Mailing() {
         console.log(groupId)
     }
 
-    if( isLoading) return <div>Pending...</div>
-
+    if( isLoading || mailingLoading) return <div>Pending...</div>
     const options = [
         { value: "by_source", label: "Сортировать по источнику" },
         { value: "by_theme", label: "Сортировать по тематике" },
@@ -50,14 +50,14 @@ export default function Mailing() {
             <div className={classes.parser}>
                 <ul className={classes.parserContent}>
                     {
-                        parserData.map(item => (
-                            <li className={`${classes.parserItem} flex`} key={item.id}>
+                        mailingData?.map((item, index) => (
+                            <li className={`${classes.parserItem} flex`} key={index}>
                                 <div>
                                     <SquareLink link={"/"} />
                                 </div>
-                                <div onClick={handleMutation}>Источник {item.id}</div>
-                                <div>Тематика {item.id}</div>
-                                <div>Статус {item.id}</div>
+                                <div onClick={handleMutation}>{item.source}</div>
+                                <div>{item.topic}</div>
+                                <div>{item.status}</div>
                                 <div>
                                     <Button link={"/info-mailing"} content={"Инфо"} />
                                 </div>

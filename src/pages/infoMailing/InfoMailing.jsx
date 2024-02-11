@@ -4,9 +4,9 @@ import ReturnPage from '../../components/ui/returnPage/ReturnPage'
 import SearchInput from '../../components/ui/searchInput/SearchInput'
 import LinkButton from '../../components/ui/linkButton/LinkButton'
 import Select from '../../components/ui/select/Select'
-import InfoMailingData from "../../components/utils/parser"
 import Button from '../../components/ui/button/Button'
 import SquareLink from '../../components/ui/squareLink/SquareLink'
+import { useGetMailingOne } from '../../api/mailing/queries'
 
 export default function InfoMailing() {
 
@@ -15,7 +15,8 @@ export default function InfoMailing() {
         { value: "by_status", label: "Сортировать по статусу" },
         { value: "by_date", label: "Сортировать по дате" },
     ]
-
+    const {data: mailingData, isLoading: mailingLoading} = useGetMailingOne()
+    
     const [search, setSearch] = useState("")
     const [option, setOption] = useState("") // chosen option from Select
 
@@ -37,14 +38,14 @@ export default function InfoMailing() {
             <div className={classes.parser}>
                 <ul className={classes.parserContent}>
                     {
-                        InfoMailingData.map(item => (
-                            <li className={`${classes.parserItem} flex`} key={item.id}>
+                        mailingData?.map((item, index) => (
+                            <li key={index} className={`${classes.parserItem} flex`}>
                                 <div>
                                     <SquareLink link={"/"} />
                                 </div>
-                                <div>Имя Фамилия {item.id}</div>
-                                <div>Статус {item.id}</div>
-                                <div>Дата {item.id}</div>
+                                <div>{item.full_name}</div>
+                                <div>{item.status}</div>
+                                <div>{item.date}</div>
                                 <div>
                                     <Button link={"/info-mailing"} content={"Написать"} />
                                 </div>

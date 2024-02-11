@@ -16,12 +16,16 @@ import botIcon from "../../assets/images/bot.svg"
 import sendIcon from "../../assets/images/send.svg"
 import Checkbox from '../../components/ui/checkbox/Checkbox'
 import Textarea from '../../components/ui/textarea/Textarea'
+import { useMutation } from '@tanstack/react-query'
+import { useLauchMailing } from '../../api/mailing/queries'
 
 export default function MailingLauncher() {
 
     const options = [
         { value: "by_subs", label: "Сортировать по кол-ву подписчиков" },
     ]
+
+    const {mutate: lauchMailingMutate, isPending: launchMailingPending, isError: lauchMailingError} = useLauchMailing()
 
     const [search, setSearch] = useState("")
     const [option, setOption] = useState("") // chosen option from Select
@@ -33,7 +37,8 @@ export default function MailingLauncher() {
     const [botOpened, setBotOpened] = useState(false)
 
     const handleMailingLauncher = () => {
-        console.log('handleMailingLauncher')
+        console.log('asdasd')
+        lauchMailingMutate(sendMessage)
     }
 
     return (
@@ -70,7 +75,7 @@ export default function MailingLauncher() {
                             <Attachment />
                         </div>
                         <div>
-                            <Input value={sendMessage} setValue={setSendMessage} placeholder={"Введите ваш запрос"} />
+                            <Input disabled={launchMailingPending} value={sendMessage} setValue={setSendMessage} placeholder={"Введите ваш запрос"} />
                         </div>
                         <div className={classes.multipleSend}>
                             <div onClick={() => setScriptOpened(true)} className={classes.script}>
@@ -125,7 +130,7 @@ export default function MailingLauncher() {
                         <Logo w={78} h={78} src={""} />
                     </div>
                     <div onClick={handleMailingLauncher} className={classes.buttonLaunch}>
-                        <ReactButton content={"Запуск"} />
+                        <ReactButton disabled={launchMailingPending} content={lauchMailingError ? "Failed, Try again" : "Запуск"} />
                     </div>
                 </div>
             </div>
