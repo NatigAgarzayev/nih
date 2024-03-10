@@ -68,7 +68,8 @@ export default function Parser() {
                                 </div>
                                 <div>Telegram</div>
                                 <div>
-                                    <Moment format="YYYY/MM/DD HH:mm" date={item.created_at}/>
+                                    asd
+                                    {/* <Moment format="YYYY/MM/DD HH:mm" date={item.created_at}/> */}
                                 </div>
                                 <div>{item.status === "REQUESTED" ? (<div className={classes.loader}></div>) : item.status}</div>
                                 <div onClick={() => handleParserResultInfo(item.parsing_result_id)}>
