@@ -1,0 +1,150 @@
+.profile{
+    height: calc(100vh - var(--height-header) - 64px - 32px);
+    max-height: 890px;
+    background-color: var(--clr-secondary);
+    padding: 48px;
+    border-radius: 20px;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.profileContent{
+    display: flex;
+    gap: 32px;
+    height: calc(100% - 48px);
+}
+
+.profileImageImg{
+    flex: 0 1 507px;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}   
+
+.profileImageImg > img{
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+}  
+
+.profileInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.profileInfo > h2{
+    color: var(--clr-black-light);
+    font-size: 3.6rem;
+    font-weight: 500;
+}
+
+.email{
+    margin-top: 24px;
+    color: var(--clr-black-light);
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.profileStat {
+    background-color: var(--clr-white);
+    border-radius: 20px;
+    padding: 12px;
+    color: var(--clr-black-light);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-top: 24px;
+}
+
+.profileStat > p {
+    margin-top: 18px;
+    color: var(--clr-black-light);
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.tarif{
+    margin-top: 18px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background-color: var(--clr-white);
+}
+
+.tarif > h3{
+    color: var(--clr-black-light);
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.tarif > p{
+    color: var(--clr-black-light);
+    font-size: 1.8rem;
+    font-weight: 400;
+
+}
+
+.editBox{
+    margin-top: auto;
+}
+
+.editProfile{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}   
+
+.editProfile > p{
+    color: var(--clr-black-light);
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+@media(max-height: 790px){
+    .profileStat{
+        margin-top: 12px;
+    }
+    .email{
+        margin-top: 12px;
+    }
+    .profileStat > p{
+        font-size: 1.8rem;
+    }
+
+    .tarif > h3{
+        font-size: 1.8rem;
+    }
+
+    .tarif > p{
+        font-size: 1.6rem;
+    }
+    .profileInfo > h2{
+        font-size: 2.4rem;
+    }
+    .email{
+        font-size: 1.6rem;
+    }
+}
+
+@media(max-height: 720px){
+    .profile{
+        gap: 24px;
+        padding: 24px;
+    }
+    .profileStat > p {
+        margin-top: 14px;
+    }
+}
+
+@media(max-height: 680px){
+    .profile{
+        gap: 12px;
+    }
+    .tarif{
+        gap: 14px;
+    }
+}
