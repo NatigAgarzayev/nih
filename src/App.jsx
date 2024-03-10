@@ -6,9 +6,8 @@ import {
 import { useEffect, useState } from 'react';
 import IfMobile from './pages/ifMobile/IfMobile.jsx';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
-import Landing from './pages/landing/Landing.jsx';
 import Cookies from 'js-cookie';
-
+import Landing from "./pages/landing/Landing"
 const router = createBrowserRouter([
   {
     path: "/",
