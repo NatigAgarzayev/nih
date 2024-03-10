@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useEffect, useState } from 'react'
 import classes from "./ParsingLauncher.module.css"
 import ReturnPage from '../../components/ui/returnPage/ReturnPage'
 import SearchInput from '../../components/ui/searchInput/SearchInput'
@@ -7,23 +7,24 @@ import CheckboxCard from '../../components/ui/checkboxCard/CheckboxCard'
 import sort from "../../assets/images/sort.svg"
 import Textarea from '../../components/ui/textarea/Textarea'
 import ReactButton from '../../components/ui/reactButton/ReactButton'
-import { usePostGroups } from '../../api/parser/queries'
+import { useManualParserLaunch } from '../../api/parser/queries'
 // import Cookies from 'js-cookie'
 import FilterParser from '../../components/filterParser/FilterParser.jsx'
+import { useNavigate } from 'react-router-dom'
 
 export default function ParsingLauncher() {
 
    /*  const options = [
         { value: "by_subs", label: "Сортировать по кол-ву подписчиков" },
     ] */
-
+    const nav = useNavigate()
     const [search, setSearch] = useState("")
     const [textareaChannels, setTextareaChannels] = useState("")
     const [textareaGroups, setTextareaGroups] = useState("")
-    const {mutate: mutateGroups, isPending: groupPending,} = usePostGroups()
+    const {mutate: mutateManualLaunch, isPending: mutateManualLaunchPending, isError: mutateManualLaunchError, isSuccess: mutateManualLaunchSuccess} = useManualParserLaunch()
     const [filterAutoParsing, setFilterAutoParsing] = useState(false)
     const [selected, setSelected] = useState([])
-
+    
     const handleSelected = (id) => {
         if (selected.indexOf(id) === -1) {
             setSelected(curr => [...curr, id])
@@ -35,56 +36,39 @@ export default function ParsingLauncher() {
     }
 
     const handleParsingLauncher = async () => {
-        console.log('start')
-        if(textareaChannels !== ""){
-            console.log('channels')
-            const dataForReq = textareaChannels.split(",")
-            for(let i = 0; i < dataForReq.length; i++){
-                dataForReq[i] = dataForReq[i].trim()
-            }
-            console.log(dataForReq)
+        console.log('parser start')
+        if(textareaChannels.trim() === "" && textareaGroups.trim() === ""){
+            alert("Заполните хотябы одну из строк")
+            return
         }
-        else if(textareaGroups !== ""){
-            console.log('groups')
-            const dataForReq = textareaGroups.split(",")
-            for(let i = 0; i < dataForReq.length; i++){
-                dataForReq[i] = dataForReq[i].trim()
+        console.log(textareaChannels, textareaGroups)
+        const dataChannels = textareaChannels.length ? textareaChannels.split(",") : []
+        const dataGroups = textareaGroups.length ? textareaGroups.split(",") : []
+        if(textareaChannels.length){
+            for(let i = 0; i < dataChannels.length; i++){
+                dataChannels[i] = dataChannels[i].trim()
             }
-            const resArr = []
-            
-            await Promise.allSettled(
-                dataForReq.map(item => {
-                    mutateGroups(item)
-                })
-            ).then(results => {
-                resArr.push(results)
-            })
-            
-            console.log(resArr)
-            /* for(let i = 0; i < dataForReq.length; i++){
-                const storeRes = await mutateGroups(dataForReq[i])
-                resArr.push(storeRes)
-            } */
-            // Cookies.set("parserResults", JSON.stringify(resArr))
         }
+        if(textareaGroups.length){
+            for(let i = 0; i < dataGroups.length; i++){
+                dataGroups[i] = dataGroups[i].trim()
+            }
+        }
+        const postData = {
+            channel_ids: dataChannels,
+            group_ids: dataGroups
+        }
+
+
+        mutateManualLaunch(postData)
+        console.log("parser end")
     }
 
-    /* const {mutate: mutateGroupParsing, isPending} = useMutation({
-        mutationFn: (data) => {
-            console.log(data)
-            axios.post(`http://84.201.179.250:3000/parser/participants/group/${data}`)
-        },
-        onSuccess: (data) => {
-            console.log(data)
+    useEffect(() => {
+        if(mutateManualLaunchSuccess){
+            nav("/nih/parser")
         }
-    }) 
-    */
-    
-    // Promise.allSettled(() => {
-    //     mutateGroupParsing()
-    // })
-    
-    // if( isPending) return <div>Pending...</div>
+    }, [mutateManualLaunchSuccess])
 
 
     return (
@@ -120,7 +104,7 @@ export default function ParsingLauncher() {
                         {
                             parsingLauncherData.map(item => (
                                 <li key={item.id}>
-                                    <CheckboxCard customClickEvent={() => handleSelected(item.id)} checkboxId={item.id} />
+                                    <CheckboxCard content={"Иван Иванов Иванович"} customClickEvent={() => handleSelected(item.id)} checkboxId={item.id} />
                                 </li>
                             ))
                         }
@@ -129,13 +113,13 @@ export default function ParsingLauncher() {
                 <div className={classes.manualParsing}>
                     <h2 className={classes.parserTitle}>Ручной</h2>
                     <div>
-                        <Textarea disabled={textareaGroups !== "" ? true : false} row={5} data={textareaChannels} setData={setTextareaChannels} placeholder={"Введите ссылки на каналы через запятую"} />
+                        <Textarea row={window.innerWidth >= 1350 ? 5 : 4} data={textareaChannels} setData={setTextareaChannels} placeholder={"Введите ссылки на каналы через запятую"} />
                     </div>
                     <div className={classes.groupTextarea}>
-                        <Textarea disabled={textareaChannels !== "" ? true : false} row={4} data={textareaGroups} setData={setTextareaGroups} placeholder={"Введите ссылки на группы через запятую"} />
+                        <Textarea row={window.innerWidth >= 1350 ? 4 : 3} data={textareaGroups} setData={setTextareaGroups} placeholder={"Введите ссылки на группы через запятую"} />
                     </div>
                     <div onClick={handleParsingLauncher} className={classes.buttonLaunch}>
-                        <ReactButton disabled={groupPending} content={"Запуск"} />
+                        <ReactButton disabled={mutateManualLaunchPending} content={mutateManualLaunchPending ? "Parsing..." : mutateManualLaunchError ? "Failed" : "Запуск"} />
                     </div>
                 </div>
             </div>

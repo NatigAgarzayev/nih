@@ -62,7 +62,7 @@
     overflow-y: auto;
     overflow-x: auto;
     padding-right: 12px;
-    height: calc(100vh - 395px - 32px - 16px + 24px);
+    height: calc(100vh - var(--height-header) - 301px - 32px - 16px + 24px);
 }
 
 .autoParsing {
@@ -101,6 +101,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .chatToolbar {
@@ -111,7 +112,8 @@
     padding-top: 24px;
 }
 
-.chatToolbar > div:nth-child(2) {
+/* It should be nth-child(2) when we will have attachment */
+.chatToolbar > div:nth-child(1) {
     flex: auto;
 }
 

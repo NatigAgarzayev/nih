@@ -23,7 +23,7 @@
     border-radius: 20px;
     background-color: var(--clr-secondary);
     margin-top: 32px;
-    height: calc(100vh - 94px - 58px - 160px + 32px);
+    height: calc(100vh - var(--height-header) - 58px - 160px + 32px);
 }
 
 .parserContent{

@@ -7,6 +7,7 @@ import Select from '../../components/ui/select/Select'
 import Button from '../../components/ui/button/Button'
 import SquareLink from '../../components/ui/squareLink/SquareLink'
 import { useGetMailingOne } from '../../api/mailing/queries'
+import Notfound from '../../components/notfound/Notfound'
 
 export default function InfoMailing() {
 
@@ -29,7 +30,7 @@ export default function InfoMailing() {
                         value={search}
                         setData={setSearch}
                     />
-                    <LinkButton link={"/parser-launcher"} content={"Добавить"} />
+                    <LinkButton link={"/nih/parser-launcher"} content={"Добавить"} />
                 </div>
                 <div>
                     <Select options={options} setValue={setOption} />
@@ -38,19 +39,21 @@ export default function InfoMailing() {
             <div className={classes.parser}>
                 <ul className={classes.parserContent}>
                     {
-                        mailingData?.map((item, index) => (
+                        mailingData.length !== 0 ? mailingData?.map((item, index) => (
                             <li key={index} className={`${classes.parserItem} flex`}>
                                 <div>
-                                    <SquareLink link={"/"} />
+                                    <SquareLink link={"/nih"} />
                                 </div>
                                 <div>{item.full_name}</div>
                                 <div>{item.status}</div>
                                 <div>{item.date}</div>
                                 <div>
-                                    <Button link={"/info-mailing"} content={"Написать"} />
+                                    <Button link={"/nih/info-mailing"} content={"Написать"} />
                                 </div>
                             </li>
                         ))
+                        :
+                        <Notfound link={"/nih/mailing-launcher"} content={"Запустите рассылку"}/>
                     }
                 </ul>
             </div>

@@ -4,7 +4,7 @@
 .chat{
     display: flex;
     gap: 32px;
-    height: calc(100vh - 94px - 24px - 128px);
+    height: calc(100vh - var(--height-header) - 24px - 128px);
 }
 
 .userProfile{
@@ -77,6 +77,8 @@
     padding-top: 24px;
 }
 
-.chatToolbar > div:nth-child(2){
+
+/* It should be nth-child(2) when we will have attachment */
+.chatToolbar > div:nth-child(1){
     flex: auto;
 }

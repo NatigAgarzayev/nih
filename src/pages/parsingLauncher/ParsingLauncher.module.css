@@ -23,6 +23,22 @@
     gap: 44px;
 }
 
+.toolBox > div > div{
+    margin-left: 0;
+}
+
+@media(max-width: 1500px){
+    .toolBox{
+        gap: 22px;
+    }
+}
+
+@media(max-width: 1450px){
+    .toolBox{
+        display: block;
+    }
+}
+
 .toolBox > div {
 }
 
@@ -57,12 +73,18 @@
     overflow-x: auto;
     padding-right: 12px;
     margin-top: 24px;
-    height: calc(100vh - 395px - 32px - 16px);
+    height: calc(100vh - var(--height-header) - 301px - 32px - 16px);
+}
+
+@media(max-width: 1450px){
+    .parserContent{
+        height: calc(100vh - var(--height-header) - 301px - 32px - 16px - 23px);
+    }
 }
 
 .autoParsing {
     border-radius: 20px;
-    padding: 24px 24px 24px 24px;
+    padding: 24px;
     flex: 0 1 50%;
     background-color: var(--clr-secondary);
 }
@@ -76,6 +98,12 @@
     color: var(--clr-black);
     font-size: 1.8rem;
     font-weight: 500;
+}
+
+@media(max-width: 1450px){
+    .sort{
+        margin-top: 22px;
+    }
 }
 
 .manualParsing {
@@ -95,4 +123,27 @@
     margin-top: auto;
     margin-left: auto;
     width: 272px;
+}
+
+@media(max-width: 1250px){
+
+    .parserContent{
+        gap: 12px;
+    }
+}
+
+@media(max-height: 720px){
+    .parser{
+        margin-top: 16px;
+    }
+    .parserTitle{
+        font-size: 2.4rem;
+    }
+    .toolsPanel{
+        margin-top: 16px;
+    }
+    .parserContent{
+        height: calc(100vh - var(--height-header) - 301px - 32px - 16px - 23px + 28px);
+        gap: 12px;
+    }
 }

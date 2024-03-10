@@ -18,58 +18,68 @@ import IfMobile from './pages/ifMobile/IfMobile.jsx';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import MailingLauncher from './pages/mailingLauncher/MailingLauncher.jsx';
 import Landing from './pages/landing/Landing.jsx';
-
+import Registration from './pages/registration/Registration.jsx';
+import Login from './pages/login/Login.jsx';
+import Cookies from 'js-cookie';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/nih",
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: "/nih",
         element: <Kanban />
       },
       {
-        path: "/parser",
+        path: "/nih/parser",
         element: <Parser />
       },
       {
-        path: "/mailing",
+        path: "/nih/mailing",
         element: <Mailing />
       },
       {
-        path: "/contacts",
+        path: "/nih/contacts",
         element: <Contacts />
       },
       {
-        path: "/info-parser",
-        element: < InfoParser />
+        path: "/nih/info-parser/:id",
+        element: <InfoParser />
       },
       {
-        path: "/info-mailing",
+        path: "/nih/info-mailing",
         element: <InfoMailing />
       },
       {
-        path: "/parsing-launcher",
+        path: "/nih/parsing-launcher",
         element: <ParsingLauncher />
       },
       {
-        path: "/profile",
-        element: <Profile />
+        path: "/nih/profile",
+        element: <Profile/>
       },
       {
-        path: "/messenger",
+        path: "/nih/messenger",
         element: <Messenger />
       }
       ,
       {
-        path: "/mailing-launcher",
+        path: "/nih/mailing-launcher",
         element: <MailingLauncher />
       }
     ]
   },
   {
-    path: "/landing",
+    path: "/registration",
+    element: <Registration />
+  },
+  {
+    path: "/login",
+    element: <Login />
+  },
+  {
+    path: "/",
     element: <Landing />
   }
 ]);
@@ -77,18 +87,27 @@ const router = createBrowserRouter([
 function App() {
 
   const [isDesktop, setIsDesktop] = useState(true)
-
   const currentRoute = window.location.href.split("/")[3]
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
     const isMobile = /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
     setIsDesktop(!isMobile)
-  }, [])
 
+    const isLogged = Cookies.get("logged_in")
+
+    if(isLogged && isLogged === "1"){
+      console.log("You're loged in")
+    }
+    else{
+      if(currentRoute !== ""){
+        window.location.href = "http://84.201.179.250:3000/oauth2/authorize"
+      }
+    }
+  }, [])
 
   const queryClient = new QueryClient()
   return (
-    (isDesktop || currentRoute) ?
+    (isDesktop && window.innerWidth >= 1024) || currentRoute === "" ?
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
     </QueryClientProvider>

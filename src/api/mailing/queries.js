@@ -1,13 +1,12 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import { BASE_URL } from "../constans";
+import axios from "../../components/utils/axios.js";
 
 export const useGetMailingAll = () => {
     return useQuery({
         queryKey: ["mailings"],
         queryFn: async () => {
             const res = await axios.get(
-                `http://84.201.179.250:3000/demo/mailing/all`
+                `/demo/mailing/all`
             );
             return res.data;
         },
@@ -18,7 +17,7 @@ export const useGetMailingOne = () => {
         queryKey: ["mailings"],
         queryFn: async () => {
             const res = await axios.get(
-                `http://84.201.179.250:3000/demo/mailing/one`
+                `/demo/mailing/one`
             );
             return res.data;
         },
@@ -28,7 +27,7 @@ export const useGetMailingOne = () => {
 export const useLauchMailing = () => {
     return useMutation({
         mutationFn: async (message) => {
-            await axios.post(`http://84.201.179.250:3000/demo/mailing/launch`, {
+            await axios.post(`/demo/mailing/launch`, {
                 message: message,
             });
         },

@@ -53,7 +53,7 @@ export default function MailingLauncher() {
                         value={search}
                         setData={setSearch}
                     />
-                    <LinkButton link={"/mailing-launcher"} content={"Добавить"} />
+                    <LinkButton link={"/nih/mailing-launcher"} content={"Добавить"} />
                 </div>
                 <div>
                     <Select options={options} setValue={setOption} />
@@ -71,9 +71,9 @@ export default function MailingLauncher() {
                         }
                     </ul>
                     <div className={classes.chatToolbar}>
-                        <div>
+                        {/* <div>
                             <Attachment />
-                        </div>
+                        </div> */}
                         <div>
                             <Input disabled={launchMailingPending} value={sendMessage} setValue={setSendMessage} placeholder={"Введите ваш запрос"} />
                         </div>
@@ -83,9 +83,9 @@ export default function MailingLauncher() {
                                 {
                                     scriptOpened && (
                                         <ul className={classes.preferences}>
-                                            <li>{`{Имя}`}</li>
-                                            <li>{`{Фамилия}`}</li>
-                                            <li>{`{Источник}`}</li>
+                                            <li onClick={() => setSendMessage(curr => curr + " {Имя} ")}>{`{Имя}`}</li>
+                                            <li onClick={() => setSendMessage(curr => curr + " {Фамилия} ")}>{`{Фамилия}`}</li>
+                                            <li onClick={() => setSendMessage(curr => curr + " {Источник} ")}>{`{Источник}`}</li>
                                         </ul>
 
                                     )

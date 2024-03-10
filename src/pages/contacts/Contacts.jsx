@@ -40,13 +40,13 @@ export default function Contacts() {
                         !contactsLoading && contactsData?.map((item, index) => (
                             <li key={index} className={`${classes.parserItem} flex`}>
                                 <div>
-                                    <SquareLink link={"/"} />
+                                    <SquareLink link={"/nih"} />
                                 </div>
                                 <div>{item.full_name}</div>
                                 <div>{item.source}</div>
                                 <div>{item.date}</div>
                                 <div>
-                                    <Button link={"/"} content={"Инфо"} />
+                                    <Button link={"/nih"} content={"Инфо"} />
                                 </div>
                             </li>
                         ))

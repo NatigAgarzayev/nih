@@ -6,6 +6,7 @@
     --clr-black: #000;
     --clr-white: #fff;
     --clr-input: #ccd9ff;
+    --height-header: 74px; 
 }
 
 body {

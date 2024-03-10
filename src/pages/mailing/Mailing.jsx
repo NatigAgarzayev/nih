@@ -7,12 +7,16 @@ import Select from '../../components/ui/select/Select'
 import Button from '../../components/ui/button/Button'
 import SquareLink from '../../components/ui/squareLink/SquareLink'
 import { useMutation } from '@tanstack/react-query'
-import axios from 'axios'
 import { useGetParticipantById } from '../../api/parser/queries'
 import { useGetMailingAll } from '../../api/mailing/queries'
+import Notfound from '../../components/notfound/Notfound'
 
 export default function Mailing() {
-
+    const options = [
+        { value: "by_source", label: "Сортировать по источнику" },
+        { value: "by_theme", label: "Сортировать по тематике" },
+        { value: "by_status", label: "Сортировать по статусу" },
+    ]
     const [search, setSearch] = useState("")
     const [option, setOption] = useState("") // chosen option from Select
     
@@ -26,11 +30,19 @@ export default function Mailing() {
     }
 
     if( isLoading || mailingLoading) return <div>Pending...</div>
-    const options = [
-        { value: "by_source", label: "Сортировать по источнику" },
-        { value: "by_theme", label: "Сортировать по тематике" },
-        { value: "by_status", label: "Сортировать по статусу" },
-    ]
+   
+
+    useEffect(() => {
+        if(option === "by_source"){
+            console.log("sorted")
+        }
+        else if(option === "by_theme"){
+            mailingData?.data.sort((a,b)=> new Date(b.theme) - new Date(a.theme))
+        }
+        else if(option === "by_status"){
+            mailingData?.data.sort((a, b) =>  a.status.localeCompare(b.status))
+        }
+    }, [option])
 
     return (
         <div className={classes.flexing}>
@@ -41,7 +53,7 @@ export default function Mailing() {
                         value={search}
                         setData={setSearch}
                     />
-                    <LinkButton link={"/mailing-launcher"} content={"Добавить"} />
+                    <LinkButton link={"/nih/mailing-launcher"} content={"Добавить"} />
                 </div>
                 <div>
                     <Select options={options} setValue={setOption} />
@@ -50,19 +62,21 @@ export default function Mailing() {
             <div className={classes.parser}>
                 <ul className={classes.parserContent}>
                     {
-                        mailingData?.map((item, index) => (
+                        mailingData.length !== 0 ? mailingData?.map((item, index) => (
                             <li className={`${classes.parserItem} flex`} key={index}>
                                 <div>
-                                    <SquareLink link={"/"} />
+                                    <SquareLink link={"/nih"} />
                                 </div>
                                 <div onClick={handleMutation}>{item.source}</div>
                                 <div>{item.topic}</div>
                                 <div>{item.status}</div>
                                 <div>
-                                    <Button link={"/info-mailing"} content={"Инфо"} />
+                                    <Button link={"/nih/info-mailing"} content={"Инфо"} />
                                 </div>
                             </li>
                         ))
+                        :
+                        <Notfound link={"/nih/mailing-launcher"} content={"Запустите рассылку"}/>
                     }
                 </ul>
             </div>

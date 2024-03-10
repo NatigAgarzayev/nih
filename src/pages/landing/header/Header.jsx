@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./Header.css"
+import { Link } from "react-router-dom"
 export default function Header() {
 
     const [active, setActive] = useState(false)
@@ -22,7 +23,7 @@ export default function Header() {
                         </ul>
                     </div>
                     <div className="header__right">
-                        <a href="#">Воспользоваться NIH</a>
+                    <Link to="/nih">Воспользоваться NIH</Link>
                         <div onClick={handleBurger} className={`burger ${active ? "active" : ""}`}>
                             <span></span>
                             <span></span>
@@ -37,7 +38,7 @@ export default function Header() {
                         <li className="header__list-item"><a href="#">Тарифы</a></li>
                     </ul>
                     <div className="mobile__under">
-                        <a href="#">Воспользоваться NIH</a>
+                        <Link to="/nih">Воспользоваться NIH</Link>
                     </div>
                 </div>
             </div>

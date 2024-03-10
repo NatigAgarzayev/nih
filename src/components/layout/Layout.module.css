@@ -6,3 +6,9 @@
     height: 100svh;
     /* background-color: #eeeeee; */
 }
+
+@media(max-width: 1250px){
+    .container{
+        padding: 32px 16px;
+    }
+}

@@ -1,12 +1,11 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import { BASE_URL } from "../constans.js";
+import axios from "../../components/utils/axios.js";
 export const useGetParticipantById = (id) => {
     return useQuery({
         queryKey: ["participants"],
         queryFn: async () => {
             const res = await axios.get(
-                `${BASE_URL}/parser/participants/${id}`
+                `/parser/participants/${id}`
             );
             return res;
         },
@@ -14,14 +13,40 @@ export const useGetParticipantById = (id) => {
     });
 };
 
-export const usePostGroups = () => {
+export const useManualParserLaunch = () => {
     return useMutation({
-        mutationFn: async (groupName) => {
-            const groupNameTransformed = groupName.split("/").slice(-1);
-            console.log(groupNameTransformed[0]);
+        mutationFn: async (data) => {
+            console.log("cahnnels", data.channel_ids)
+            console.log("grourps", data.group_ids)
             await axios.post(
-                `${BASE_URL}/parser/participants/group/${groupNameTransformed[0]}`
+                `/parser/manual/start`,
+                {
+                    channel_ids: data.channel_ids,
+                    group_ids: data.group_ids
+                }
             );
         },
     });
 };
+
+export const useGetParsingResults = () => {
+    return useQuery({
+        queryKey: ["parsings"],
+        queryFn: async () => {
+            const res = await axios.get(`/parser/results`)
+            return res
+        },
+        enabled: true
+    })
+}
+
+
+export const useGetParserContent = (id) => {
+    return useQuery({
+        queryKey: ["parsed", id],
+        queryFn: async () => {
+            const res = await axios.get(`/parser/result/${id}`)
+            return res
+        }
+    })
+}

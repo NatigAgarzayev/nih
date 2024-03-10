@@ -7,27 +7,27 @@ export default function Header() {
     return (
         <div className={`${classes.header} flex`}>
             <div className={`${classes.nav} flex`}>
-                <Link to="/">
+                <Link to="/nih">
                     <div className={classes.logo}>NIH</div>
                 </Link>
                 <nav>
                     <ul className={`${classes.list} flex`}>
                         <li>
-                            <Link to="/parser">Парсер</Link>
+                            <Link to="/nih/parser">Парсер</Link>
                         </li>
                         <li>
-                            <Link to="/mailing">Рассылка</Link>
+                            <Link to="/nih/mailing">Рассылка</Link>
                         </li>
                         <li>
-                            <Link to="/contacts">Контакты</Link>
+                            <Link to="/nih/contacts">Контакты</Link>
                         </li>
                     </ul>
                 </nav>
             </div>
-            <Link to="/profile">
+            <Link to="/nih/profile">
                 <div className={`${classes.profile} flex`}>
                     <p>Ваш профиль</p>
-                    <Logo w={58} h={58} src={""} />
+                    <Logo w={48} h={48} src={""} />
                 </div>
             </Link>
         </div >

@@ -8,12 +8,13 @@ export default function InnerCard({ cardInfo, index }) {
         <Draggable
             draggableId={cardInfo.id}
             index={index}
+            className={classes.cardDrop}
         >
             {
                 (provided) => (
 
-                    <Link to="/messenger">
-                        <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} draggable={true} className={`${classes.card} flex`}>
+                    <Link to="/nih/messenger">
+                        <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} draggable={true} className={`${classes.cardInner} flex`}>
                             <Logo w={32} h={32} src={""} />
                             <div className={classes.text}>{cardInfo.text}</div>
                         </div>

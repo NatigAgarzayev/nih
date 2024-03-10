@@ -1,8 +1,7 @@
-import React from 'react'
 import classes from "./CheckboxCard.module.css"
 import Logo from "../logo/Logo"
 import Checkbox from '../checkbox/Checkbox'
-export default function CheckboxCard({ checkboxId, customClickEvent }) {
+export default function CheckboxCard({ content, checkboxId, customClickEvent }) {
     return (
         <div className={classes.checkboxPricipal}>
             <label onClick={customClickEvent} htmlFor={checkboxId} className={`${classes.checkboxLabel}`}>
@@ -10,7 +9,7 @@ export default function CheckboxCard({ checkboxId, customClickEvent }) {
             <div className={`${classes.checkbox} flex`}>
                 <div className={`${classes.cahecboxFirstPart} flex`}>
                     <Logo w={32} h={32} src={""} />
-                    <p className={classes.channelName}>Ноготочки ЕКБ</p>
+                    <p className={classes.channelName}>{content}</p>
                 </div>
 
                 <div>

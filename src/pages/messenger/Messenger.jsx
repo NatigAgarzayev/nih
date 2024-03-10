@@ -54,9 +54,9 @@ export default function Messenger() {
                         }
                     </div>
                     <div className={classes.chatToolbar}>
-                        <div>
+                       {/*  <div>
                             <Attachment />
-                        </div>
+                        </div> */}
                         <div>
                             <Input value={inputValue} setValue={setInputValue} placeholder={"Введите ваше сообщение"} />
                         </div>
