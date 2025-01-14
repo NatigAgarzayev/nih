@@ -1,0 +1,29 @@
+.textarea {
+    width: 100%;
+    outline: none;
+    resize: none;
+    padding: 18px;
+
+    border: 0;
+
+    color: var(--clr-black);
+    background-color: inherit;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.textareaContent{
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 8px 0;
+    padding-right: 8px;
+}
+
+.textarea::placeholder {
+    color: var(--clr-black);
+    opacity: 0.5;
+}
+
+.textarea:disabled {
+    opacity: 0.5;
+}

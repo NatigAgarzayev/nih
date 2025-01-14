@@ -1,0 +1,92 @@
+@import "./assets/fonts/fonts.css";
+:root {
+    --clr-primary: #4075ff;
+    --clr-secondary: #ebf0ff;
+    --clr-black-light: #323232;
+    --clr-black: #000;
+    --clr-white: #fff;
+    --clr-input: #ccd9ff;
+    --clr-green: #20c997;
+    --clr-red: #ec3030;
+    --height-header: 74px; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "SF Pro Display", sans-serif;
+    font-weight: 400;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+input,
+textarea {
+    font-family: "SF Pro Display", sans-serif;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 6px; /* width of the entire scrollbar */
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 40px;
+    background: var(--clr-input); /* color of the tracking area */
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--clr-primary); /* color of the scroll thumb */
+    border: 3px solid var(--clr-primary); /* creates padding around scroll thumb */
+    border-radius: 40px;
+    cursor: grabbing;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.205);
+    z-index: 11;
+}

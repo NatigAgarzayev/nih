@@ -1,0 +1,39 @@
+.header{
+    width: 100%;
+    background-color: var(--clr-primary);
+    border-radius: 100px;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: var(--height-header);
+}
+
+.nav{
+    gap: 32px;
+}
+
+.logo{
+    color: var(--clr-white);
+    font-size: 3.8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 3.8px;
+}
+
+.list{
+    gap: 32px;
+}
+
+.list a{
+    color: var(--clr-white);
+    font-size: 1.8rem;
+}
+
+.profile{
+    gap: 12px;
+}
+
+.profile > p{
+    color: var(--clr-white);
+    font-size: 1.6rem;
+}

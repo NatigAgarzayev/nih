@@ -1,0 +1,232 @@
+.fiterWrapper{
+    padding: 18px 9px 18px 18px;
+    position: absolute;
+    left: 150px;
+    z-index: 40000;
+    border: 1px solid var(--clr-black-light);
+    border-radius: 20px;
+    background-color: var(--clr-white);
+}
+
+.form {
+    width: 333px;
+    overflow-y: auto;
+    padding-right: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    
+}
+
+.form > div {
+    display: flex;
+    flex-direction: column;
+}
+.form label {
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.selectInput {
+    height: 58px;
+    padding: 18px;
+    border-radius: 20px;
+    border: 1px solid var(--clr-black-light);
+    outline: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    appearance: none;
+    background: url("../../assets/images/select-chevron.svg") no-repeat center
+        right 25px;
+}
+
+.rangeStat {
+    justify-content: space-between;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.rangeStat > div:first-child {
+    border-radius: 14px;
+    padding: 4px 8px 4px 8px;
+    background: var(--clr-primary);
+    color: var(--clr-white);
+}
+.rangeStat > div:last-child {
+    border-radius: 14px;
+    padding: 4px 8px 4px 8px;
+    background: var(--clr-input);
+    color: var(--clr-black);
+}
+
+.subs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.subs > div {
+    flex: 0 1 102px;
+    position: relative;
+}
+.subs > div > input {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    border: 1px solid var(--clr-secondary);
+    border-radius: 0px 8px 8px 0px;
+    padding: 18px 0px 18px 18px;
+    height: 38px;
+    outline: none;
+
+    color: var(--clr-black-light);
+    font-family: SF Pro Display;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 21px;
+}
+.subs > div:first-child > input {
+    position: relative;
+    left: 35px;
+}
+
+.subs > div::before {
+    content: "";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    left: 0;
+    top: 0;
+    background-color: red;
+    z-index: 1;
+
+    color: var(--clr-black-light);
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 21px;
+    border-radius: 8px 0px 0px 8px;
+    background: var(--clr-secondary);
+}
+
+.subs > div:first-child::before {
+    content: "от";
+}
+.subs > div:last-child::before {
+    content: "до";
+    left: -35px;
+}
+
+.inputCheckbox[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 0.1rem;
+    border: 2px solid var(--clr-black-light);
+    border-radius: 0.5rem;
+    width: 24px;
+    height: 24px;
+}
+
+.inputCheckbox[type="checkbox"][type="checkbox"]::before {
+    margin: auto;
+    content: "";
+    width: 1.4rem;
+    height: 1.4rem;
+    transform: scale(0);
+    background: url("../../assets/images/check.svg") no-repeat center;
+}
+
+.inputCheckbox[type="checkbox"]:checked {
+    background-color: var(--clr-primary);
+    border: 2px solid var(--clr-primary);
+}
+
+.inputCheckbox[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+.inputCheckbox[type="checkbox"]:hover {
+    color: red;
+}
+
+.checkboxBox {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    gap: 5px;
+}
+
+.verified {
+    display: flex;
+    align-items: center;
+}
+
+.verified img {
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.button {
+    color: var(--clr-white);
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+
+    width: 100%;
+    height: 100%;
+    height: 58px;
+    padding: 18px;
+
+    border-radius: 30px;
+    background: var(--clr-primary);
+    border: none;
+    cursor: pointer;
+}
+
+.verification {
+    height: 24px;
+}
+
+.lineHr {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.filterReset{
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 21.48px;
+    color: var(--clr-primary) !important;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.filterReset::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 137px;
+    border: 1px dashed var(--clr-primary);
+    transform: translateX(-50%);
+}

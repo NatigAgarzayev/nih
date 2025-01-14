@@ -1,0 +1,156 @@
+.toolkit{
+    margin: 32px 0;
+}
+.chat{
+    display: flex;
+    gap: 32px;
+    height: calc(100vh - var(--height-header) - 24px - 128px);
+}
+
+.userProfile{
+    flex: 0 0 364px;
+    padding: 32px;
+    background-color: var(--clr-secondary);
+    border-radius: 20px;
+    height: fit-content;
+}
+
+.profileImage{
+    border-radius: 20px;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+}
+
+.profileImage > img{
+    object-fit: cover;
+    object-position: center;
+}
+
+.userProfile > h3{
+    margin-top: 24px;
+    color: var(--clr-black);
+    font-size: 3.6rem;
+    font-weight: 500;
+}
+
+.textBox{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 24px;
+    color: var(--clr-black);
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.userChat{
+    flex: auto;
+    background: url("../../assets/images/messenger_back.jpeg") no-repeat center / cover;
+    border-radius: 20px;
+    padding: 32px 16px 32px 32px;
+    display: flex;
+    flex-direction: column;
+}   
+
+.chatContent{
+    flex: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 16px;
+    position: relative;
+}
+
+.chatContent > div{
+    margin-top: 55px;
+}
+
+.chatContent > div:first-child{
+    margin-top: 0px;
+}
+
+
+.chatToolbar{
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 24px;
+}
+
+.enterButton{
+    outline: none;
+    border: 0;
+    background-color: transparent;
+}
+.noMessages{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.4rem;
+    color: var(--clr-black-light);
+}
+
+.botMessage{
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background-color: var(--clr-primary);
+    outline: none;
+    border: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.botMessage:disabled{
+    background-color: #4076ff60;
+}
+
+/* It should be nth-child(2) when we will have attachment */
+.chatToolbar > div:nth-child(1){
+    flex: auto;
+}
+
+@media(max-height: 780px){
+    .profileImage{
+        width: 100%;
+    }
+    .userProfile{
+        padding: 16px;
+    }
+    .textBox{
+        margin-top: 10px;
+        gap: 10px;
+    }
+}
+
+@media(max-height: 720px){
+    .chat{
+        gap: 16px;
+    }
+    .textBox{
+        font-size: 1.4rem;
+    }
+    .userProfile{
+        flex: 0 0 264px;
+    }
+    .userProfile > h3{
+        font-size: 2.4rem;
+    }
+    .profileImage{
+        height: 250px;
+    }
+}
+
+@media(max-height: 640px){
+    .userProfile > h3{
+        margin-top: 10px;
+    }
+    .profileImage{
+        height: 200px;
+    }
+}

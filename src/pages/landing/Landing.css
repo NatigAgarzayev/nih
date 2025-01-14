@@ -1,0 +1,17 @@
+.container {
+    max-width: 1432px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+@media (max-width: 768px) {
+    .landing {
+        gap: 30px;
+    }
+}

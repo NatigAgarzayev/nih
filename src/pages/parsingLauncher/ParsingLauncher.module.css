@@ -1,0 +1,154 @@
+.parsingNumber {
+    padding: 32px 0;
+    color: var(--clr-black-light);
+    font-size: 3.6rem;
+    font-weight: 500;
+}
+
+.flexing {
+}
+
+.toolsPanel {
+    margin-top: 32px;
+    justify-content: space-between;
+}
+
+.toolsKit {
+    gap: 24px;
+    height: 24px;
+}
+
+.toolBox {
+    justify-content: space-between;
+    gap: 44px;
+}
+
+.toolBox > div > div{
+    margin-left: 0;
+}
+
+@media(max-width: 1500px){
+    .toolBox{
+        gap: 22px;
+    }
+}
+
+@media(max-width: 1450px){
+    .toolBox{
+        display: block;
+    }
+}
+
+.toolBox > div {
+}
+
+.toolBox > div:first-child {
+    flex: 0 1 455px;
+}
+.toolBox > div:last-child {
+    cursor: pointer;
+}
+
+.parserTitle {
+    color: var(--clr-black);
+    font-size: 3.6rem;
+    font-weight: 500;
+    padding-bottom: 24px;
+}
+
+.parser {
+    display: flex;
+    border-radius: 20px;
+    margin-top: 32px;
+    gap: 32px;
+}
+
+.parserContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding-right: 12px;
+    margin-top: 24px;
+    height: calc(100vh - var(--height-header) - 301px - 32px - 16px);
+    position: relative;
+}
+
+@media(max-width: 1450px){
+    .parserContent{
+        height: calc(100vh - var(--height-header) - 301px - 32px - 16px - 23px);
+    }
+}
+
+.autoParsing {
+    border-radius: 20px;
+    padding: 24px;
+    flex: 0 1 50%;
+    background-color: var(--clr-secondary);
+}
+
+.sort {
+    gap: 12px;
+    position: relative;
+}
+
+.sort p {
+    color: var(--clr-black);
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+@media(max-width: 1450px){
+    .sort{
+        margin-top: 22px;
+    }
+}
+
+.manualParsing {
+    border-radius: 20px;
+    padding: 24px;
+    flex: 0 1 50%;
+    background-color: var(--clr-secondary);
+    display: flex;
+    flex-direction: column;
+}
+
+.groupTextarea {
+    margin-top: 20px;
+}
+
+.buttonLaunch {
+    margin-top: auto;
+    margin-left: auto;
+    width: 272px;
+}
+
+@media(max-width: 1250px){
+
+    .parserContent{
+        gap: 12px;
+    }
+}
+
+@media(max-height: 800px){
+    .groupTextarea,.additionalTextarea{
+        margin-top: 10px;
+    }
+}
+
+@media(max-height: 750px){
+    .parser{
+        margin-top: 16px;
+    }
+    .parserTitle{
+        font-size: 2.4rem;
+    }
+    .toolsPanel{
+        margin-top: 16px;
+    }
+    .parserContent{
+        height: calc(100vh - var(--height-header) - 301px - 32px - 16px - 23px + 28px + 16px);
+    }
+}

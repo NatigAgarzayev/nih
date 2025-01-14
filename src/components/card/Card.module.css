@@ -1,0 +1,23 @@
+.noData{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--clr-black-light);
+    font-size: 1.8rem;
+}
+.card{
+    min-height: 95%;
+}
+
+@media(max-height: 720px){
+    .card{
+        min-height: 50px;
+    }
+}
+
+@media(max-height: 720px){
+    .noData{
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("./SFPRODISPLAYREGULAR.eot");
+    src: url("./SFPRODISPLAYREGULAR.eot?#iefix") format("embedded-opentype"),
+        url("./SFPRODISPLAYREGULAR.woff2") format("woff2"),
+        url("./SFPRODISPLAYREGULAR.woff") format("woff"),
+        url("./SFPRODISPLAYREGULAR.ttf") format("truetype"),
+        url("./SFPRODISPLAYREGULAR.svg#SF Pro Display") format("svg");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("./SFPRODISPLAYMEDIUM.eot");
+    src: url("./SFPRODISPLAYMEDIUM.eot?#iefix") format("embedded-opentype"),
+        url("./SFPRODISPLAYMEDIUM.woff2") format("woff2"),
+        url("./SFPRODISPLAYMEDIUM.woff") format("woff"),
+        url("./SFPRODISPLAYMEDIUM.ttf") format("truetype"),
+        url("./SFPRODISPLAYMEDIUM.svg#SF Pro Display") format("svg");
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("./SFPRODISPLAYBOLD.eot");
+    src: url("./SFPRODISPLAYBOLD.eot?#iefix") format("embedded-opentype"),
+        url("./SFPRODISPLAYBOLD.woff2") format("woff2"),
+        url("./SFPRODISPLAYBOLD.woff") format("woff"),
+        url("./SFPRODISPLAYBOLD.ttf") format("truetype"),
+        url("./SFPRODISPLAYBOLD.svg#SF Pro Display") format("svg");
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("./SF-Pro-Display-Light.eot");
+    src: url("./SF-Pro-Display-Light.eot?#iefix") format("embedded-opentype"),
+        url("./SF-Pro-Display-Light.woff2") format("woff2"),
+        url("./SF-Pro-Display-Light.woff") format("woff"),
+        url("./SF-Pro-Display-Light.ttf") format("truetype"),
+        url("./SF-Pro-Display-Light.svg#SF Pro Display") format("svg");
+    font-weight: 300;
+    font-display: swap;
+}

@@ -1,0 +1,16 @@
+.overlay{
+    background-color: var(--clr-secondary);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.overlay > h2{
+    font-size: 3.2rem;
+    color: var(--clr-black);
+}

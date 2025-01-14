@@ -1,0 +1,70 @@
+.cardBox {
+  display: flex;
+  align-items: center;
+  height: 58px;
+  justify-content: space-between;
+  gap: 30px;
+  cursor: pointer;
+}
+
+.parserId {
+  padding: 18px;
+  border-radius: 60px;
+  opacity: 0.5;
+  background: var(--clr-white);
+
+  color: var(--clr-black-light);
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+  height: 100%;
+  flex: 1 1 113px;
+  cursor: pointer;
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+
+  color: var(--clr-black);
+  font-size: 1.8rem;
+  font-weight: 400;
+  background-color: var(--clr-white);
+  border-radius: 30px;
+  height: 100%;
+  flex: 0 1 256px;
+}
+
+.participantName {
+  padding: 18px;
+  text-align: center;
+
+  color: var(--clr-black);
+  font-size: 1.8rem;
+  font-weight: 500;
+  background-color: var(--clr-white);
+  border-radius: 30px;
+  height: 100%;
+  flex: 0 1 256px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activeCard {
+  color: var(--clr-white);
+  background-color: var(--clr-primary);
+  opacity: 1;
+}
+
+@media(max-width: 1250px){
+  .cardBox{
+    gap: 20px;
+  }
+}
+@media(max-width: 1150px){
+  .cardBox{
+    gap: 10px;
+  }
+}

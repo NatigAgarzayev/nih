@@ -1,0 +1,25 @@
+.cardInner{
+    border-radius: 30px;
+    background-color: var(--clr-white); 
+    max-width: 100%;
+    padding: 18px;
+    gap: 12px;
+    margin-top: 12px;
+    height: 70px;
+}
+
+@media(max-height: 720px){
+    .cardInner{
+        height: 50px;
+        margin-top: 18px;
+    }
+}
+
+.text{
+    color: var(--clr-black);
+    font-size: 1.8rem;
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

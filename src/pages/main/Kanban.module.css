@@ -1,0 +1,89 @@
+.kanban{
+    display: flex;
+    gap: 32px;
+    height: calc(100vh - var(--height-header) - 64px - 32px);
+    margin-top: 32px;
+}
+
+@media(max-width: 1350px){
+    .kanban{
+        gap: 16px;
+    }
+}
+
+@keyframes successAnim {
+    0%{
+        background-color: var(--clr-primary);
+    }
+    25%{
+        background-color: var(--clr-green);
+    }
+    100%{
+        background-color: var(--clr-primary);
+    }
+}
+
+.updateTicket{
+    width: 40px;
+    height: 40px;
+    background-color: var(--clr-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    left: 30px;
+    bottom: 50px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.updateTicket.error{
+    transition: all 0.3s ease;
+    background-color: var(--clr-red);
+}
+.updateTicket.success{
+    animation: successAnim 3s ease 1;
+    transition: all 0.3s ease;
+}
+
+.wrapper{
+    width: 24%;
+    flex: 0 1 25%;
+    border-radius: 20px;
+    padding: 0 12px 24px 24px;
+    background-color: var(--clr-secondary);
+    position: relative;
+}
+
+@media(max-width: 1350px){
+    .wrapper{
+        padding: 0 6px 12px 12px;
+    }
+}
+.card{
+    height: calc(100% - 70px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 12px;
+    position: relative;
+}
+
+.title{
+    color: var(--clr-black-light);
+    font-size: 2rem;
+    font-weight: 500;
+    padding-top: 24px;
+    padding-bottom: 12px;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} 
+
+@media(max-width: 1450px) {
+    .title{
+        font-size: 1.8rem;
+        padding-bottom: 6px;
+    }
+}

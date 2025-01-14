@@ -1,0 +1,276 @@
+.parsingNumber {
+    padding: 32px 0;
+    color: var(--clr-black-light);
+    font-size: 3.6rem;
+    font-weight: 500;
+}
+
+.flexing {
+}
+
+.toolsPanel {
+    margin-top: 32px;
+    justify-content: space-between;
+    height: 58px;
+    margin-bottom: 32px;
+}
+
+.toolsKit {
+    gap: 24px;
+    height: 24px;
+}
+
+.toolsKit:nth-child(2) {
+    margin-left: 100px !important;
+}
+
+.toolBox {
+    justify-content: space-between;
+    gap: 44px;
+}
+
+.toolBox > div {
+}
+
+.toolBox > div:first-child {
+    flex: 0 1 455px;
+}
+.toolBox > div:last-child {
+    cursor: pointer;
+    flex: 1 0 333px;
+}
+
+.parserTitle {
+    color: var(--clr-black);
+    font-size: 3.6rem;
+    font-weight: 500;
+    padding-bottom: 24px;
+}
+
+.parser {
+    display: flex;
+    border-radius: 20px;
+    margin-top: 32px;
+    gap: 32px;
+}
+
+.parserContent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding-right: 12px;
+    height: calc(100vh - var(--height-header) - 301px - 32px - 16px + 24px);
+    position: relative;
+}
+
+.autoParsing {
+    border-radius: 20px;
+    padding: 24px 24px 24px 24px;
+    flex: 0 1 50%;
+    background-color: var(--clr-secondary);
+}
+
+.sort {
+    gap: 12px;
+}
+
+.sort p {
+    color: var(--clr-black);
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.manualParsing {
+    border-radius: 20px;
+    padding: 24px;
+    flex: 0 1 50%;
+    background: url("../../assets/images/messenger_back.jpeg");
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonLaunch {
+    margin-top: auto;
+    margin-left: auto;
+    width: 272px;
+}
+
+.exampleMessage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.chatToolbar {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-top: 24px;
+}
+
+/* It should be nth-child(2) when we will have attachment */
+.chatToolbar > div:nth-child(1) {
+    flex: auto;
+}
+
+.multipleSend {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 50px;
+    background: var(--clr-primary);
+    position: relative;
+}
+
+.script {
+    cursor: pointer;
+}
+
+.bot {
+    cursor: pointer;
+}
+
+.send {
+    cursor: pointer;
+}
+
+.preferences {
+    max-width: 250px;
+    position: absolute;
+    left: -80px;
+    top: -130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    background: var(--clr-white);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 9px 0;
+    z-index: 12;
+}
+
+.preferences > li {
+    padding: 6px 18px;
+    cursor: pointer;
+    color: var(--clr-primary);
+    font-size: 1.8rem;
+    font-weight: 500;
+    background: var(--clr-white);
+    user-select: none;
+    transition: background 0.1s ease;
+}
+
+.texting {
+    width: 297px;
+    position: absolute;
+    left: 20px;
+    bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    justify-content: center;
+    border-radius: 20px;
+    background: var(--clr-white);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 18px;
+    z-index: 12;
+}
+.checkboxLabel {
+    position: relative;
+}
+.checkboxLabel > label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.checkboxLabel > div {
+    justify-content: space-between;
+}
+
+.checkboxLabel > div > p {
+    color: var(--clr-black-light);
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.promptContent{
+    z-index: 12;
+    position: absolute;
+    width: 25vw;
+    height: 25vh;
+    border-radius: 20px;
+    background: var(--clr-white);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15);
+    padding: 18px 18px 25px 18px;
+    bottom: 75px;
+    left: 0;
+}
+
+.promptContent > small{
+    color: var(--clr-black-light);
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    margin-top: 4px;
+}
+
+.triggerContent{
+    z-index: 12;
+    position: absolute;
+    width: 25vw;
+    border-radius: 20px;
+    background: var(--clr-white);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15);
+    padding: 18px;
+    bottom: 75px;
+    left: 0;
+}
+
+.promptContent > div{
+    height: 100%;
+}
+
+.promptContent > div > textarea{
+    height: 100%;
+}
+
+.prompt{
+    cursor: pointer;
+}
+.trigger{
+    cursor: pointer;
+}
+@media(max-height: 780px){
+    .toolsPanel{
+        margin: 16px 0;
+    }
+    .parserContent{
+        height: calc(100vh - var(--height-header) - 301px - 32px - 16px + 24px + 32px + 16px);
+    }
+    .parser{
+        margin-top: 0;
+        gap: 16px;
+    }
+}
+
+@media(max-width: 1150px){
+    .parser{
+        gap: 16px;
+    }
+}

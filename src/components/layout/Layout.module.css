@@ -1,0 +1,14 @@
+.container{
+    max-width: 1792px;
+    padding: 32px 64px;
+    margin: 0 auto;
+    height: 100vh;
+    height: 100svh;
+    /* background-color: #eeeeee; */
+}
+
+@media(max-width: 1450px){
+    .container{
+        padding: 32px 16px;
+    }
+}
